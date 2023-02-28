@@ -1,5 +1,14 @@
+import classNames from 'classnames/bind';
+import stytes from '../Header/Header.mudule.scss';
+
+const cx = classNames.bind(stytes);
+
 function Header() {
-    return <h2>Header</h2>;
+    return (
+        <header className={cx('wrapper')}>
+            <div className={cx('inner')}></div>
+        </header>
+    );
 }
 
 export default Header;

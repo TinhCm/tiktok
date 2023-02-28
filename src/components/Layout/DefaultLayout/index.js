@@ -1,13 +1,17 @@
+import classNames from 'classnames/bind';
 import Header from '../components/Header';
+import stytes from '../DefaultLayout/DefaultLayout.module.scss';
 import Sidebar from './Sidebar';
+
+const cx = classNames.bind(stytes);
 
 function DefaultLayout({ children }) {
     return (
-        <div>
+        <div className={cx('wrapper')}>
             <Header />
-            <div className="container">
+            <div className={cx('container')}>
                 <Sidebar />
-                <div className="content">{children}</div>
+                <div className={cx('content')}>{children}</div>
             </div>
         </div>
     );
