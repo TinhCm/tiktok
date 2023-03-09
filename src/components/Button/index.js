@@ -22,9 +22,16 @@ function Button({
 }) {
     let Comp = 'button';
     const props = {
-        onclick,
+        onClick,
         ...passProps,
     };
+    if (disabled) {
+        Object.keys(props).forEach((key) => {
+            if (key.startsWith('on') && typeof props[key] === 'function') {
+                delete props[key];
+            }
+        });
+    }
     if (to) {
         props.to = to;
         Comp = Link;
