@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+    faArrowUpFromBracket,
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
@@ -13,6 +13,7 @@ import {
     faSpinner,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
+
 import Tippy from '@tippyjs/react';
 import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
@@ -64,7 +65,7 @@ function Header() {
     // Handle
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1, 2, 3]);
+            setSearchResult([]);
         }, 0);
     });
 
@@ -136,7 +137,7 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload}></FontAwesomeIcon>
+                                    <FontAwesomeIcon icon={faArrowUpFromBracket}></FontAwesomeIcon>
                                 </button>
                             </Tippy>
                         </>
@@ -152,7 +153,7 @@ function Header() {
                                 className={cx('user-avatar')}
                                 alt="Võ Thị Hoài Thương"
                                 src="https://scontent.fsgn13-2.fna.fbcdn.net/v/t1.6435-9/132650489_2811531662467967_2763030351591934173_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=3-aYBjqimeEAX817stM&_nc_ht=scontent.fsgn13-2.fna&oh=00_AfCJinZZD0xASb8SHVWTUEskPBbbvgqDZ0yzN-4nOZHDuA&oe=64311FD6"
-                            ></img>
+                            />
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
